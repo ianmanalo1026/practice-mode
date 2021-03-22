@@ -48,17 +48,18 @@
                 <td>{{e.student}}</td>
                 <td>{{e.professor}}</td>
                 <td>{{e.subject}}</td>
-                <td>{{prelim_score}}</td>
-                <td>{{midterm_score}}</td>
-                <td>{{final_score}}</td>
-                <td>{{sem_score}}</td>
-                <td>{{sem_status}}</td>
+                <td>{{e.prelim_score}}</td>
+                <td>{{e.midterm_score}}</td>
+                <td>{{e.final_score}}</td>
+                <td>{{e.sem_score}}</td>
+                <td>{{e.sem_status}}</td>
               </tr>
               {% endfor %}
             </tbody>
           </table>
     
     </div>
+    {{num_student}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->

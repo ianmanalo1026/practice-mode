@@ -26,6 +26,8 @@ class Subject(models.Model):
     def __str__(self):
         return self.name
     
+    
+    
 class Enrollment(models.Model):
     GRADE_STATUS = (
         ("A","A"),
@@ -36,12 +38,14 @@ class Enrollment(models.Model):
     subject = models.ForeignKey(Subject, on_delete=models.CASCADE)
     professor = models.ForeignKey(Professor, on_delete=models.CASCADE, null=True, blank=True)
     date = models.DateTimeField(auto_now_add=True)
-    prelim_score = models.IntegerField(null=True, blank=True)
-    midterm_score = models.IntegerField(null=True, blank=True)
-    final_score = models.IntegerField(null=True, blank=True)
-    sem_score = models.IntegerField(null=True, blank=True)
-    sem_status = models.CharField(choices=GRADE_STATUS , max_length=50, null=True, blank=True)
+    prelim_score = models.IntegerField(null=True, blank=True, default=0)
+    midterm_score = models.IntegerField(null=True, blank=True,  default=0)
+    final_score = models.IntegerField(null=True, blank=True,  default=0)
+    sem_score = models.IntegerField(null=True, blank=True,  default=0)
+    sem_status = models.CharField(choices=GRADE_STATUS , max_length=50, null=True, blank=True,  default=0)
     
     
     def __str__(self):
         return f"{self.student} enrolled in {self.subject}"
+    
+    
